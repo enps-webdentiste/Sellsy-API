@@ -39,10 +39,13 @@ C'est une application web, connectant à la base de donnée dans Sellsy à l'aid
 7.Configurer le paramètre d'accès à la base de donnée et les clé d'API dans app/config/parameters.yml
 
 8.Lancez les commandes suivants pour compilé les Javascript et CSS : 
-	php bin/console assets:install
-	php bin/console assetic:dump
-	php bin/console ca:cle 
-	php bin/console ca:cle --env=prod
+> php bin/console assets:install
+>
+> php bin/console assetic:dump
+>
+> php bin/console ca:cle 
+>
+> php bin/console ca:cle --env=prod
 	
 9.Extraire le fichier teknoo.zip et copier le repertoire obtenu "teknoo" dans le repertoire "vendor" , en ecrasant l'ancien repertoire qui existe.
 
