@@ -1,0 +1,285 @@
+
+upself.user.create_header: __upself.user.create_header
+upself.users: Users
+upself.users.sub_header: __upself.users.sub_header
+upself.user.list_title: Liste des utilisateurs
+upself.id: ID
+upself.user.username: __upself.user.username
+upself.user.email: __upself.user.email
+upself.user.last_login: __upself.user.last_login
+upself.user.enabled: __upself.user.enabled
+upself.list.actions: __upself.list.actions
+upself.user.no_results: __upself.user.no_results
+upself.user.update_header: __upself.user.update_header
+upself.manage_vehicles: Créer un véhicule
+upself.manage_orders: Créer une commande
+upself.orders: Commandes
+upself.displayb2bOrders: Commandes B2B
+upself.welcome: Bienvenue sur Pomp
+upself.last_login: Dernière connexion le
+upself.account: Mon compte
+upself.user.sepaenabled: Activer Sepa
+
+upself.school: Ecole
+upself.school.create_header: Créer une école
+upself.school.sub_header: Aperçu
+upself.school.update_header: Modifier une école
+upself.school.list_title: Liste des écoles
+upself.school.enabled: Activer
+upself.school.sepaenabled: Activer Sepa
+
+upself.error_title: ERREUR
+upself.error_text1: Un problème est survenu.
+upself.error_text2: Si vous pensez qu'il s'agit d'une erreur, n'hésitez pas à nous contacter !
+upself.error400_title: ERREUR 400
+upself.error400_text: Une erreur de requete est survenue lors de votre navigation.
+upself.error401_title: ERREUR 401
+upself.error401_text: Vous n'êtes pas connecté !
+upself.error403_title: ERREUR 403
+upself.error403_text: Vous n'avez pas accès à cette page.
+upself.error404_title: ERREUR 404
+upself.error404_text: Malheureusement, la page à laquelle vous tentez d'accéder n'est pas disponible.
+upself.error500_title: ERREUR 500
+upself.error500_text: Une erreur de serveur est survenue.
+
+
+sylius.resource.create: La création a bien été effectuée.
+sylius.resource.update: La mise à jour a bien été effectuée.
+sylius.resource.delete: La suppression a bien été effectuée.
+
+
+upself.vehicle: Véhicule
+upself.vehicles: Véhicules
+upself.imat: Immatriculation
+upself.brand: Marque
+upself.model: Modèle
+upself.location: Lieu
+upself.fuelType: Type de carburant
+upself.color: Couleur
+upself.actions: Actions
+upself.creation_date: Date de création
+
+## Confirmation ##
+upself.confirmation.title: Êtes-vous sûr(e) ?
+upself.confirmation.message: Voulez-vous vraiment réaliser cette action ?
+
+## Buttons ##
+button.create: Créer
+buton.show: Afficher
+button.update: Modifier
+button.manage: Gérer
+button.delete: Supprimer
+button.confirm: Confirmer
+button.cancel: Annuler
+button.submit: Envoyer
+button.browse: Rechercher
+button.back: Retour
+button.generate: Générer
+button.import: Importer
+button.add: Ajouter
+button.save: Enregistrer
+button.cancel_update: Annuler la modification
+button.cancel_add: Annuler l'ajout
+button.finish: Finir
+button.next: Suivant
+button.delete: Supprimer
+button.see_more: Voir plus
+button.update_price: Modifier les prix
+button.clear_filter: Effacer les filtres
+button.profile: Profil
+button.sign_out: Déconnexion
+
+## API Clients ##
+upself.clients: API Clients
+
+## Payment ##
+upself.payment: Paiement
+upself.payment.sub_header: Enregistrer le paiement
+upself.payment.list_title: Débiter un client enregistré
+
+## API - documentation ##
+upself.api.doc: API Privée
+upself.api.doc.public: API Public
+upself.documentation: Documentation
+upself.documentation.sub_header: API Documentation
+upself.documentation.list_title: Pomp API Documentation
+
+## Orders ##
+upself.orders: Commandes
+upself.orders.sub_header:	Liste des commandes
+upself.orders.list_title:	Liste des commandes
+upself.orderType:	Type de commande
+upself.orders: Commandes
+
+## Locations ##
+upself.location: Lieux
+
+## Schedules ##
+upself.schedule: Réapprovisionnement
+
+## PompUsers ##
+upself.upselfUsers: Utilisateurs Pomp
+upself.upselfUsers.sub_header: Liste des utilisateurs Pomp
+upself.upselfUsers.list_title: Liste des utilisateurs Pomp
+
+## Companies ##
+upself.companies: Entreprises
+upself.company: Entreprise
+upself.companies.sub_header: Liste des entreprises
+upself.companies.list_title: Liste des entreprises
+
+## Prices / Scrapping ##
+upself.price: Système de prix
+upself.scrap: Prix de l'essence à Paris
+upself.scrap.sub_header: Vue générale
+upself.scrap.list_title: "Liste des prix:"
+
+## Traffic ##
+upself.traffic: Informations sur le trafic
+upself.traffic.sub_header: Implémentation GoogleMaps
+upself.traffic.list_title: informations trafic
+
+
+######  EMAILS #####
+
+## base_email ##
+email.base.talk_about_us: Parlez de nous à vos amis !
+email.base.hi: Bonjour
+email.base.copyright: Tout droits réservés
+email.base.CGU: CGU
+email.upself_team: L'équipe Pomp
+
+## confirm_signup ##
+email.confirm_signup.title: Merci de vous être inscrit !
+email.confirm_signup.success: Bienvenue dans notre communauté Pomp !
+email.confirm_signup.log_in: Connectez vous sur notre site
+email.confirm_signup.able_order: pour pouvoir passer votre première commande.
+email.confirm_signup.bye: A très bientôt !
+
+## password_resetting ##
+email.reset_password.title: Vous voulez réinitialiser votre mot de passe ?
+email.reset_password.here_it_is: Veuillez simplement suivre
+email.reset_password.link: ce lien.
+email.reset_password.bye: A très bientôt !
+
+## confirm_order ##
+email.confirm_order.title: "Voici le récapitulatif de votre commande :"
+email.confirm_order.id_order: "Le code de votre commande :"
+email.confirm_order.vehicle: "Votre véhicule :"
+email.confirm_order.amount: "Le montant d'essence que vous avez commandé :"
+email.confirm_order.fill_up: Vous avez commandé un plein d'essence.
+email.confirm_order.date: "La date de la commande :"
+email.confirm_order.place: "Le lieu de la commande :"
+email.confirm_order.type_fuel: "Le type d'essence que nous vous fourniront :"
+email.confirm_order.contact_text: Si vous constatez un problème dans votre commande, n'hésitez pas à nous contacter
+email.confirm_order.contact_text2: Ou par téléphone au 01 76 44 01 43.
+email.confirm_order.contact_link: via notre site internet
+email.confirm_order.bye: A très bientôt !
+
+## cancel_order ##
+email.cancel_order.title: "Voici le récapitulatif de votre commande annulée:"
+email.cancel_order.id_order: "Le code de votre commande :"
+email.cancel_order.vehicle: "Votre véhicule :"
+email.cancel_order.amount: "Le montant d'essence que vous avez commandé :"
+email.cancel_order.fill_up: Vous avez commandé un plein d'essence.
+email.cancel_order.date: "La date de la commande :"
+email.cancel_order.place: "Le lieu de la commande :"
+email.cancel_order.type_fuel: "Le type d'essence que nous vous fourniront :"
+email.cancel_order.contact_text: Si vous constatez un problème dans votre commande, n'hésitez pas à nous contacter
+email.cancel_order.contact_text2: Ou par téléphone.
+email.cancel_order.contact_link: via notre site internet
+email.cancel_order.bye: A très bientôt !
+email.cancel_order.cancel_paid: Cela vous a coûté 5€ !
+
+## user_task_failed ##
+email.user_task_failed.title: "Tâche annulée:"
+email.user_task_failed.id_order: "Le code de votre commande :"
+email.user_task_failed.not_show_up: "La livraison a échouée"
+email.user_task_failed.contact_text: Si vous constatez un problème dans votre commande, n'hésitez pas à nous contacter
+email.user_task_failed.contact_text2: Ou par téléphone.
+email.user_task_failed.contact_link: via notre site internet
+email.user_task_failed.bye: A très bientôt !
+email.user_task_failed.task_failed_paid: Cela vous a coûté 5€ !
+
+## upself_task_failed ##
+email.upself_task_failed.title: "Une tâche a échoué:"
+email.upself_task_failed.id_order: "Le code de la commande :"
+email.upself_task_failed.id_task: "Le code de la tâche :"
+email.upself_task_failed.text: "Une tâche a échoué"
+email.upself_task_failed.contact_text2: Ou par téléphone.
+email.upself_task_failed.contact_link: via notre site internet
+email.upself_task_failed.bye: A très bientôt !
+
+## no_place_number ##
+email.no_place_number.title: "Vous n'avez pas renseigné votre place de parking :"
+email.no_place_number.text1: Pour que nous puissions accéder à votre véhicule, nous avons besoin de savoir où il est ! Pourriez-vous renseigner son numéro de place de parking ?
+email.no_place_number.link: Suivez ce lien
+email.no_place_number.text2: ", connectez-vous et mettez à jour votre commande. Merci !"
+
+
+## B2B Order ##
+upself.delivery_date: Date de livraison
+upself.b2bOrders.list: Liste des commandes
+upself.b2bOrders.order: Commande
+upself.b2bOrders: Commandes
+upself.b2bOrders.sub_header: Vos commandes
+upself.b2bOrders.view_header: Détails de la commande
+upself.b2bOrders.status: Status de la commande
+upself.b2bOrders.total_price:  Prix total facturé TTC
+upself.b2bOrders.refills: Pleins effectués
+upself.b2bOrders.vehicle: Véhicules
+upself.b2bOrders.additionnal_informations: Informations complémentaires
+upself.b2bOrders.added_info: Infos supplémentaires
+upself.b2bOrders.liters: Litres ravitaillés
+upself.b2bOrders.id_onfleet:  ID Onfleet
+upself.b2bOrders.create_header: Nouvelle commande
+upself.b2bOrders.steps: Étapes
+upself.b2bOrders.or_add_new_schedule: Ajouter un créneau de ravitaillement
+upself.b2bOrders.Add:  Ajouter
+upself.b2bOrders.choose_vehicle: Choisissez les véhicules à ravitationner
+upself.b2bOrders.or_add_new_vehicle: Ajouter un nouveau véhicule
+upself.b2bOrders.your_selected_vehicle: Voici les véhicules dont vous souhaitez faire le plein
+upself.b2bOrders.your_schedule: Votre créneau de ravitationnement
+upself.b2bOrders.your_selected_vehicles_recap: Véhicules sélectionnés
+upself.b2bVehicles: Mes véhicules
+upself.b2bVehicles.sub_header: Ajouter un véhicule
+upself.vehicle.list_title: Liste de vos véhicules
+upself.b2bVehicle.update_header: Mettre à jour mon véhicule
+upself.b2bOrders.update_header: Mettre à jour ma commande
+upself.b2bOrders.select_schedule: Crénau de ravitaillement
+upself.b2bOrders.select_vehicle: Véhicules
+upself.b2bOrders.add_contract_number_vehicle: Numéros de contrat
+upself.b2bOrders.contract_number: Numéro de contrat
+upself.b2bOrders.confirmation: Récapitulatif
+upself.b2bOrders.button_next: Suivant
+upself.b2bOrders.button_back: Retour
+upself.b2bOrders.button_reset: Reset
+upself.b2bVehicles.create_header: Créer un nouveau véhicule
+upself.b2bOrders.Cancel_order: Annuler la commande
+upself.b2bOrders.label_schedule_date: Date
+upself.b2bOrders.label_schedule_location: Lieu
+upself.b2bOrders.label_vehicle_company: Entreprise
+upself.b2bOrders.label_vehicle_imat: Immatriculation
+upself.b2bOrders.label_vehicle_brand: Marque
+upself.b2bOrders.label_vehicle_model: Modèle
+upself.b2bOrders.label_vehicle_fuelType: Type d'essence
+upself.b2bOrders.label_vehicle_color: Couleur
+upself.b2bOrders.label_schedule_choose: "Choisissez un réapprovisionnement:"
+upself.b2bOrders.must_choice_vehicle: Vous devez sélectionner au moins un véhicule !
+upself.b2bOrders.update_this_vehicle: Modifier ce véhicule
+email.b2border_allrefilled.title: Trouvez ci-joint la facture de votre commande.
+upself.b2bOrders.download_invoice_pdf: Télécharger la facture
+
+
+upself.welcome_to_dashboard: Bienvenue sur la Dashboard Pomp !
+upself.hello: Bonjour
+upself.dashboard.welcome_text1: Découvrez notre Dashboard Pomp. En cas de questions, n'hésitez pas à nous contacter par mail à
+upself.mail_address: support@upselffuel.com
+upself.dashboard.welcome_text2: ou par téléphone au
+upself.phone_number: +33 1 76 44 01 43
+upself.form.filter.query: Rechercher
+upself.no_results: Pas de résultats.
+upself.owner: Utilisateur
+
+upself.b2bSepa.iban_text: En fournissant votre IBAN, vous autorisez POMP et Stripe, notre service de paiement, d'envoyer à votre banque des instructions de débit sur votre compte, enn accord avec ces instructions. Vous avez le droit de demander un remboursement sous les conditions générales de votre banque. Un remboursement peut-être réclamé dans les 8 semaines à partir de la date où le compte à été débité. Plus d'information sur les prélèvements SEPA <a href="https://www.europeanpaymentscouncil.eu/what-we-do/sepa-direct-debit/sdd-mandate" target="_blank">ici</a>.
+upself.b2bSepa.alredy_actived: Votre SEPA est bien fonctionnel !

@@ -1,0 +1,90 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-10">
+			<div class="col-sm-2">ThirdId :</div>
+			<div class="col-sm-8">
+				{{client.thirdid}}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-10">
+			<div class="col-sm-2">Identifiant client :</div>
+			<div class="col-sm-8">
+				{{client.ident}}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-10">
+			<div class="col-sm-2">Nom :</div>
+			<div class="col-sm-8">
+				{{client.getContact().lastname}}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-10">
+			<div class="col-sm-2">Prénom :</div>
+			<div class="col-sm-8">
+				{{client.getContact().firstname}}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-10">
+			<div class="col-sm-2">Société :</div>
+			<div class="col-sm-8">
+				{{client.name}}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-10">
+			<div class="col-sm-2">Adresse postale :</div>
+			<div class="col-sm-8">
+				{{client.mainAddress}}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-10">
+			<div class="col-sm-2">Adresse email :</div>
+			<div class="col-sm-8">
+				{{client.email}}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-10">
+			<div class="col-sm-2">Télephone fixe :</div>
+			<div class="col-sm-8">
+				{{client.tel}}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-10">
+			<div class="col-sm-2">Télephone mobile :</div>
+			<div class="col-sm-8">
+				{{client.mobile}}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-10">
+			<div class="col-sm-2">Conseiller :</div>
+			<div class="col-sm-8">
+				{{client.getOwner().forename}} {{client.getOwner().name}}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-10">
+			<div class="col-sm-2">Lien Sellsy :</div>
+			<div class="col-sm-8">
+				<a href="https://www.sellsy.fr{{client.clienturl}}" target="_blank">https://www.sellsy.fr{{client.clienturl}}</a>
+			</div>
+		</div>
+	</div>
+</div>

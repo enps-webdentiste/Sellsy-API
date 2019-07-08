@@ -1,0 +1,21 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: sellsy
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: ns0.ovh.net
+    mailer_port: 587
+    mailer_user: noreply@upself.fr
+    mailer_password: noreply1234
+    mailer_encryption: null
+    mailer_auth_mode: login
+    mailer_noreply: noreply@upself.fr
+    mailer_sender_name: 'Webdentiste'
+    secret: 0e7180c64d4bf026552ac395b919c7460fd682d5
+    user_token: 4e886d5d251930253a61df110ef9c5d93596bcb4
+    user_secret: 88c76692c3125ae89ec38d55bde934b3deb79412
+    consumer_token: 71a5a298dff5a35c0591fe9062883e34a74b6c27
+    consumer_secret: 146f42a20354b76a9bff30fc98c7350ad19afe23

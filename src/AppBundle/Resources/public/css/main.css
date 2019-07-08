@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'sellsy';
+    src: url('../fonts/sellsy.eot');
+    src: url('../fonts/sellsy.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sellsy.woff') format('woff'),
+         url('../fonts/sellsy.ttf') format('truetype'),
+         url('../fonts/sellsy.svg#sellsy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+[class*='sl-']:before{ 
+	display: inline-block;
+   font-family: 'sellsy';
+   font-style: normal;
+   font-weight: normal;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale
+}
+.sl-avec-rdv-de-suivi:before{content:'\0041';}
+.sl-clients-sans-contact:before{content:'\0042';}
+.sl-sans-rdv-de-suivi:before{content:'\0043';}
+.sl-suivi-clients:before{content:'\0044';}
+
+.sl-icons {
+display: flex !important;
+align-content: center;
+align-items: center;
+}

@@ -1,0 +1,272 @@
+
+## General ##
+upself.id: ID
+upself.username: Username
+upself.email: Email
+upself.last_login: Last login
+upself.enabled: Enabled
+upself.actions: Actions
+upself.no_results: No results
+upself.dashboard: Dashboard
+upself.welcome: Welcome to Upself
+upself.yes: Yes
+upself.no: No
+upself.secret: Secret
+upself.random_id: Random Id
+upself.role: Role
+upself.imat: Imat
+upself.brand: Brand
+upself.model: Model
+upself.fuelType: Fuel Type
+upself.color: Color
+upself.firstname: Firstname
+upself.lastname: Lastname
+upself.owner: Owner
+upself.amount: Amount
+upself.currency: Currency
+upself.creation_date: Creation Date
+upself.name: Name
+upself.phone: Phone
+upself.mail_address: support@upselffuel.com
+upself.phone_number: +33 1 76 44 01 43
+upself.uniqueKey: Unique Key
+upself.hello: Hello
+upself.click_here: Click here
+upself.manage_vehicles: Create a vehicle
+upself.manage_orders: Create an order
+upself.last_login: Last login on
+upself.account: My account
+
+upself.school: School
+upself.school.create_header: Create School
+upself.school.sub_header: Overview
+upself.school.update_header: Update School
+upself.school.list_title: School list
+upself.school.enabled: Enabled
+upself.school.sepaenabled: Enabled Sepa
+
+## Users ##
+upself.users: Users
+upself.user.create_header: Create User
+upself.users.sub_header: Overview
+upself.user.update_header: Update User
+upself.user.list_title: User list
+upself.user.enabled: Enabled
+upself.user.sepaenabled:  Enabled Sepa
+
+## Form ##
+upself.form.filter.query: Search
+
+## Confirmation ##
+upself.confirmation.title: Are you sure?
+upself.confirmation.message: Do you want to perform this action?
+
+## Client ##
+upself.clients: Api Clients
+upself.clients.sub_header: Overview
+upself.clients.list_title: Client API list
+
+## Véhicle ##
+upself.vehicle: Vehicle
+upself.vehicles: Vehicles
+
+## Payment ##
+upself.payment: Payment
+upself.payment.sub_header: Payment charging
+upself.payment.list_title: Charge a registered client
+
+## API - documentation ##
+upself.api.doc: Private API
+upself.api.doc.public: Public API
+upself.documentation: Documentation
+upself.documentation.sub_header: API Documentation
+upself.documentation.list_title: Upself Api Documentation
+
+## Orders ##
+upself.orders:            Orders
+upself.orders.sub_header:	Order list
+upself.orders.list_title:	Order list
+upself.orderType:	Order Type
+upself.orders: Orders
+upself.displayb2bOrders: Commandes B2B
+
+## Locations ##
+upself.location: Locations
+
+## Schedules ##
+upself.schedule: Schedules
+
+## UpselfUsers ##
+upself.upselfUsers: Upself Users
+upself.upselfUsers.sub_header: Upself User List
+upself.upselfUsers.list_title: Upself User List
+
+## Companies ##
+upself.companies: Companies
+upself.company: Company
+upself.companies.sub_header: Company list
+upself.companies.list_title: Company list
+
+## Prices / Scrapping ##
+upself.price: Pricing system
+upself.scrap: Price of Fuel in Paris
+upself.scrap.sub_header: Overview
+upself.scrap.list_title: "List of prices:"
+
+## Traffic ##
+upself.traffic: Traffic informations
+upself.traffic.sub_header: GoogleMaps Implementation
+upself.traffic.list_title: Traffic Information
+
+## Dashboard ##
+upself.welcome_to_dashboard: Welcome to your own Upself Dashboard!
+upself.dashboard.welcome_text1: Enjoy our Upself Dashboard. Don't hesitate to ask us anything by mail at
+upself.dashboard.welcome_text2: or by phone on
+
+## Errors ##
+upself.error_title: ERROR
+upself.error_text1: A problem occurred.
+upself.error_text2: If you think it's an error, don't hesitate to contact us !
+upself.error400_title: ERROR 400
+upself.error400_text: A problem occurred during your navigation.
+upself.error401_title: ERROR 401
+upself.error401_text: You are not connected!
+upself.error403_title: ERROR 403
+upself.error403_text: You don't have the authorization to access to this page.
+upself.error404_title: ERROR 404
+upself.error404_text: Unfortunately, the page you are trying to reach is unavailable.
+upself.error500_title: ERROR 500
+upself.error500_text: A server error occurred.
+
+## Buttons ##
+button.create: Create
+button.show: Show
+button.update: Update
+button.manage: Manage
+button.delete: Delete
+button.confirm: Confirm
+button.cancel: Cancel
+button.submit: Submit
+button.browse: Browse
+button.back: Back
+button.generate: Generate
+button.import: Import
+button.add: Add
+button.save: Save
+button.cancel_update: Cancel update
+button.cancel_add: Cancel add
+button.finish: Finish
+button.next: Next
+button.see_more: See more
+button.update_price: Update Prices
+button.clear_filter: Clear filters
+button.profile: Profile
+button.sign_out: Sign Out
+
+#### Sylius ####
+sylius.resource.create: The creation has been completed.
+sylius.resource.update: The update has been completed.
+sylius.resource.delete: The deletion has been completed.
+
+######  EMAILS #####
+
+## base_email ##
+email.base.talk_about_us: Talk about us to your friends!
+email.base.hi: Hi
+email.base.copyright: All rights reserved
+email.base.CGU: TOS
+email.upself_team: Upself Team
+
+## confirm_signup ##
+email.confirm_signup.title: Thanks for your signup!
+email.confirm_signup.success: Welcome to the Upself community!
+email.confirm_signup.log_in: Log in to our website
+email.confirm_signup.able_order: so you'll be able to order.
+email.confirm_signup.bye: See you next time!
+
+## password_resetting ##
+email.reset_password.title: You want to reset your password?
+email.reset_password.here_it_is: Just follow
+email.reset_password.link: this link.
+email.reset_password.bye: See you next time!
+
+## confirm_order ##
+email.confirm_order.title: "Here is a confirmation of your order:"
+email.confirm_order.id_order: "The number of your order:"
+email.confirm_order.vehicle: "Your vehicle:"
+email.confirm_order.amount: "The amount you ordered:"
+email.confirm_order.fill_up: You ordered a fill up.
+email.confirm_order.date: "The date of the refuel:"
+email.confirm_order.place: "The place of the refuel:"
+email.confirm_order.type_fuel: "The type of fuel you asked for:"
+email.confirm_order.contact_text: If there is a problem with your order, feel free to contact us
+email.confirm_order.contact_text2: or by phone at +33 1 76 44 01 43.
+email.confirm_order.contact_link: via our website
+email.confirm_order.bye: See you next time!
+email:
+  confirm_order:
+email.b2border_allrefilled.title: See attached the invoice of your order.
+upself.b2bOrders.download_invoice_pdf: Download invoice
+
+## no_place_number ##
+email.no_place_number.title: "You didn't provide the place number of your car:"
+email.no_place_number.text1: In order to refuel your car, we need to know where it is parked! Can you please give it to us?
+email.no_place_number.link: Follow this link
+email.no_place_number.text2: ", login and update your order. Thank you!"
+
+## B2B Order ##
+upself.delivery_date: Date de livraison
+upself.b2bOrders.list: Orders list
+upself.b2bOrders.order: Commande
+upself.b2bOrders: Commandes
+upself.b2bOrders.sub_header: Vos commandes
+upself.b2bOrders.view_header: Détails de la commande
+upself.b2bOrders.status: Status de la commande
+upself.b2bOrders.total_price:  Prix total facturé TTC
+upself.b2bOrders.refills: Pleins effectués
+upself.b2bOrders.vehicle: Vehicle
+upself.b2bOrders.additionnal_informations: Additional informations
+upself.b2bOrders.added_info: Infos supplémentaires
+upself.b2bOrders.liters: Litres ravitationnés
+upself.b2bOrders.id_onfleet:  ID Onfleet
+upself.b2bOrders.create_header: New Order
+upself.b2bOrders.steps: Steps
+upself.b2bOrders.or_add_new_schedule: Add a new Schedule
+upself.b2bOrders.Add: Save
+upself.b2bOrders.choose_vehicle: Choose the vehicles to refill
+upself.b2bOrders.or_add_new_vehicle: Add a new vehicle
+upself.b2bOrders.your_selected_vehicle: Here are the vehicles you want to refill
+upself.b2bOrders.your_schedule: Your delivery spot
+upself.b2bOrders.your_selected_vehicles_recap: Selected vehicles
+upself.b2bVehicles: My vehicles
+upself.b2bVehicles.sub_header: Manage my vehicles
+upself.vehicle.list_title: Vehicles list
+upself.b2bVehicle.update_header: Update my vehicle
+upself.b2bOrders.update_header: Update my order
+upself.b2bOrders.select_schedule: Delivery Spot
+upself.b2bOrders.select_vehicle: Vehicles
+upself.b2bOrders.add_contract_number_vehicle: Contract Number
+upself.b2bOrders.contract_number: Contract Number
+upself.b2bOrders.confirmation: Summary
+upself.b2bOrders.button_next: Next
+upself.b2bOrders.button_back: Back
+upself.b2bOrders.button_reset: Reset
+upself.b2bOrders.Cancel_order: Cancel Order
+upself.b2bOrders.label_schedule_date: Date
+upself.b2bOrders.label_schedule_location: Location
+upself.b2bOrders.label_vehicle_company: Company
+upself.b2bOrders.label_vehicle_location: Location
+upself.b2bOrders.label_vehicle_imat: Imatriculation
+upself.b2bOrders.label_vehicle_brand: Brand
+upself.b2bOrders.label_vehicle_model: Model
+upself.b2bOrders.label_vehicle_fuelType: Fuel Type
+upself.b2bOrders.label_vehicle_color: Color
+upself.b2bVehicles.create_header: Create a new vehicle
+upself.b2bOrders.label_schedule_choose: "Choose a Schedule:"
+upself.b2bOrders.must_choice_vehicle: You must choose at least one vehicle!
+upself.b2bOrders.update_this_vehicle: Update this vehicle
+
+upself.b2bSepa.iban_text: By providing your IBAN, you are authorizing POMP and Stripe, our payment service provider, to send instructions to your bank to debit your account and your bank to debit your account in accordance with those instructions. You are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited. More info on the SEPA fonctions <a href="https://www.europeanpaymentscouncil.eu/what-we-do/sepa-direct-debit/sdd-mandate" target="_blank">here</a>.
+upself.b2bSepa.alredy_actived: Your SEPA is working!
+
+datee.manage_translation: Manage translation

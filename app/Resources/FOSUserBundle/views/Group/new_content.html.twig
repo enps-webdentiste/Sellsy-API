@@ -1,0 +1,37 @@
+{% embed ':Embed:box.html.twig' %}
+	{% block title %}
+		<i class="fa fa-plus"></i>
+	   Création de groupe
+	{% endblock %}
+	{% block boxContent %}
+	{% trans_default_domain 'FOSUserBundle' %}
+		{{ form_start(form, { 'action': path('fos_user_group_new'), 'attr': { 'class': 'fos_user_group_new' } }) }}
+		<div class="row">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">{{ form_label(form.name) }} <span class="form-required" title="Ce champ est requis.">*</span></label>
+			<div class="col-sm-10">
+				{{ form_widget(form.name, { 'attr': {'class': ''} }) }}
+				<span class="form-required">{{ form_errors(form.name) }}</span>
+			</div>
+		</div>
+		</div>
+		<div class="row">
+		<div class="form-group">
+			<label class="col-sm-2 control-label"></label>
+			<div class="col-sm-10">
+				<input type="submit" value="{{ 'group.new.submit'|trans }}" />
+			</div>
+		</div>
+		</div>
+		<div class="row">
+		{% import ':Macro:buttons.html.twig' as buttons %}
+		{% import ':Macro:formButtons.html.twig' as formButtons %}
+			{{ buttons.back({
+			url : path('fos_user_group_list'),
+		}) }}
+		</div>
+		 
+		{{ form_end(form) }}
+			
+	{% endblock %}
+{% endembed %}

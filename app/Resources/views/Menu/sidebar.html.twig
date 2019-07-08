@@ -1,0 +1,72 @@
+{% block sidebar %}
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header"></li>
+        <li class="{% if 'homepage' in routeName %}active{% endif %}">
+          <a href="{{ path('homepage') }}">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            
+          </a>
+          
+        </li>
+        <li class="{% if 'sans-contact' in routeName %}active{% endif %}">
+          <a href="{{ path('sans-contact') }}" class="sl-icons" >
+            <i class="fa sl-clients-sans-contact"></i> <span>Clients sans contact</span>
+            
+          </a>
+        </li>
+		
+		<li class="{% if 'avec-rdvs' in routeName %}active{% endif %}">
+          <a href="{{ path('avec-rdvs') }}" class="sl-icons"><i class="fa sl-avec-rdv-de-suivi"></i><span>AVEC rdv de suivi</span></a>
+        </li>
+		<li class="{% if 'sans-rdvs' in routeName %}active{% endif %}">
+          <a href="{{ path('sans-rdvs') }}" class="sl-icons"><i class="fa sl-sans-rdv-de-suivi"></i><span>SANS rdv de suivi</span></a></li>
+        </li>
+		<li class="{% if 'suivie-clts' in routeName %}active{% endif %}">
+          <a href="{{ path('suivie-clts') }}" class="sl-icons">
+            <i class="fa sl-suivi-clients" aria-hidden="true"></i> <span>Suivi Clients</span>
+            
+          </a>
+        </li>
+		<li class="{% if 'relance' in routeName %}active{% endif %}">
+          <a href="{{ path('relance') }}" class="sl-icons">
+            <i class="fa fa-bullhorn" aria-hidden="true"></i> <span>Relance Clients</span>
+            
+          </a>
+        </li>
+		
+		{% if is_granted('ROLE_ADMIN') %}
+		<li class="{% if 'user_list' in routeName %}active{% endif %}">
+          <a href="{{ path('user_list') }}">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i> <span>Gestion des utilisateurs</span>
+            
+          </a>
+        </li>
+		
+		<li class="{% if 'fos_user_group_list' in routeName %}active{% endif %}">
+          <a href="{{ path('fos_user_group_list') }}">
+            <i class="fa fa-users"></i> <span>Gestion des groupes</span>
+            
+          </a>
+        </li>
+		
+		{% endif %}
+		
+		<li class="{% if 'user_update_parameter' in routeName %}active{% endif %}">
+          <a href="{{ path('user_update_parameter') }}">
+            <i class="fa fa-cogs" aria-hidden="true"></i> <span>Paramètres</span>
+            
+          </a>
+        </li>
+		
+		
+        
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+{% endblock %}

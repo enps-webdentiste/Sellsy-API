@@ -1,0 +1,128 @@
+{% extends '::base.html.twig' %}
+{#{% extends 'bootstrap_3_horizontal_layout.html.twig' %}#}
+{% block header %}
+    <h1>
+        Paramètre utilisateur
+    </h1>
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    
+    <style>        
+        .form-required{
+            color: #f00;
+            font-weight: bold;
+            font-size: 14px;
+        }
+		.j-control-label{
+			    /* padding-top: 7px; */
+				margin-bottom: 0;
+				text-align: right;
+		}
+    </style>
+{% endblock %}
+{% form_theme form _self %}
+
+{%- block choice_widget_expanded -%}
+    <div {{ block('widget_container_attributes') }}>
+    {%- for child in form %}
+		<div class="col-md-4">
+        {{- form_widget(child,{ 'attr': {'class': 'checkClass'} }) -}} &nbsp;
+        {{- form_label(child, null, {translation_domain: choice_translation_domain}) -}}
+		</div>
+    {% endfor -%}
+    </div>
+	<br/>
+{%- endblock choice_widget_expanded -%}
+{% block content %}
+    {% embed ':Embed:box.html.twig' %}
+        {% block title %}
+            <i class="fa fa-edit"></i>
+           Modification paramètre utilisateur
+        {% endblock %}
+        {% block boxContent %}
+            <form action="{{ path('user_update_parameter') }}" method="post" class="form-horizontal" enctype ="multipart/form-data" novalidate>
+				<div class="form-group">
+                    <label class="col-sm-3 j-control-label">{{ form_label(form.sincemonth) }} <span class="form-required" title="Ce champ est requis.">*</span> :</label>
+                    <div class="col-sm-9">
+						<div class="col-md-6">
+                        {{ form_widget(form.sincemonth, { 'attr': {'class': ''} }) }}
+                        <span class="form-required">{{ form_errors(form.sincemonth) }}</span>
+						</div>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label class="col-sm-3 j-control-label">{{ form_label(form.owners) }} :</label>
+                    <div class="col-sm-9">
+						<div class="col-md-12">
+                        <i>Sélectionnez les conseillers à afficher sur le dashboard</i>
+						</div>
+						<div class="col-md-12">
+                        <input type="radio" id="cocher">Tout cocher
+						&nbsp; <input type="radio" id="decocher">Tout décocher
+						</div>
+                    </div>
+                </div>
+				
+				
+				
+				<div class="form-group">
+                    <label class="col-sm-3 j-control-label"></label>
+                    <div class="col-sm-9">
+                        {{ form_widget(form.owners, { 'attr': {'class': ''} }) }}
+                        <div class="col-md-12">
+                        {{ form_widget(form.showdelete, { 'attr': {'class': 'checkClass'} }) }}
+                        
+						
+						{{ form_label(form.showdelete) }}
+						</div>
+                    </div>
+                </div>
+				
+				<div class="form-group">
+                    <label class="col-sm-3 j-control-label"> </label>
+                    <div class="col-sm-9">
+						
+                    </div>
+                </div>
+
+                {% import ':Macro:buttons.html.twig' as buttons %}
+                {% import ':Macro:formButtons.html.twig' as formButtons %}
+                {{ formButtons.update() }}
+                {{ buttons.back({
+                    url : path('homepage'),
+                }) }}
+
+                {#{{ form_errors(form) }}#}
+                <div class="hide">
+                {{ form_rest(form) }}
+                </div>
+
+            </form>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+    $(document).ready(function(){
+
+// TOUT COCHER
+$(":radio#cocher").click(function(){
+$(':checkbox.checkClass').prop('checked', true);
+$(":radio#decocher").prop('checked', false);
+});
+// TOUT DE-COCHER
+$(":radio#decocher").click(function(){
+$(':checkbox.checkClass').prop('checked', false);
+$(":radio#cocher").prop('checked', false);
+});
+// UNCHECK SI UNE CHECKBOX EST SELECTIONNEE
+$(':checkbox.checkClass').click(function(){
+$(":radio#cocher").prop('checked', false);
+$(":radio#decocher").prop('checked', false);
+}); 
+
+});   
+    </script>
+{% endblock %}

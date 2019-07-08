@@ -1,0 +1,116 @@
+{% extends '::base.html.twig' %}
+{#{% extends 'bootstrap_3_horizontal_layout.html.twig' %}#}
+{% block header %}
+    <h1>
+        Gestion des utilisateurs
+    </h1>
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    
+    <style>        
+        .form-required{
+            color: #f00;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    {% embed ':Embed:box.html.twig' %}
+        {% block title %}
+            <i class="fa fa-edit"></i>
+           Modification utilisateur
+        {% endblock %}
+        {% block boxContent %}
+            <form action="{{ path('user_update', {id: user.id}) }}" method="post" class="form-horizontal" enctype ="multipart/form-data" novalidate>
+				<div class="form-group">
+                    <label class="col-sm-2 control-label">{{ form_label(form.lastname) }} <span class="form-required" title="Ce champ est requis.">*</span></label>
+                    <div class="col-sm-10">
+                        {{ form_widget(form.lastname, { 'attr': {'class': ''} }) }}
+                        <span class="form-required">{{ form_errors(form.lastname) }}</span>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label class="col-sm-2 control-label">{{ form_label(form.firstname) }} <span class="form-required" title="Ce champ est requis.">*</span></label>
+                    <div class="col-sm-10">
+                        {{ form_widget(form.firstname, { 'attr': {'class': ''} }) }}
+                        <span class="form-required">{{ form_errors(form.firstname) }}</span>
+                    </div>
+                </div>
+                <div class="form-group {% if form.username.vars.errors|length %}has-error {% endif %}">
+                    <label class="col-sm-2 control-label">{{ form_label(form.username) }} <span class="form-required" title="Ce champ est requis.">*</span></label>
+                    <div class="col-sm-10">
+                        {{ form_widget(form.username) }}
+                        {{ form_errors(form.username) }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+				   <div class="col-sm-2 control-label">
+					   {{ form_label(form.email) }} <span class="form-required" title="Ce champ est requis.">*</span>
+				   </div>
+				   <div class="col-sm-10 {% if form.email.vars.errors|length %}has-error {% endif %}">
+					   {{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
+					   <span class="form-required">{{ form_errors(form.email) }}</span>
+				   </div>
+				</div>
+				<div class="form-group">
+                       <div class="col-sm-2 control-label">
+                           {{ form_label(form.plainPassword.first) }} <span class="form-required" title="Ce champ est requis.">*</span>
+                       </div>
+                       <div class="col-sm-10 {% if form.plainPassword.first.vars.errors|length %}has-error {% endif %}">
+                           {{ form_widget(form.plainPassword.first) }}
+                           <span class="form-required">{{ form_errors(form.plainPassword.first) }}</span>
+                       </div>
+                    </div>
+                    <div class="form-group">
+                       <div class="col-sm-2 control-label">
+                           {{ form_label(form.plainPassword.second) }} <span class="form-required" title="Ce champ est requis.">*</span>
+                       </div>
+                       <div class="col-sm-10 {% if form.plainPassword.second.vars.errors|length %}has-error {% endif %}">
+                           <input type="tel" hidden />
+                           {{ form_widget(form.plainPassword.second) }}
+                           <span class="form-required">{{ form_errors(form.plainPassword.second) }}</span>
+                       </div>
+                    </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{{ form_label(form.groups) }}</label>
+                    <div class="col-sm-10">
+                        {{ form_widget(form.groups, { 'attr': {'class': ''} }) }}
+                        {{ form_errors(form.groups) }}
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label class="col-sm-2 control-label">{{ form_label(form.enabled) }}</label>
+                    <div class="col-sm-10">
+                        {{ form_widget(form.enabled, { 'attr': {'class': ''} }) }}
+                        {{ form_errors(form.enabled) }}
+                    </div>
+                </div>
+
+                
+
+
+                {% import ':Macro:buttons.html.twig' as buttons %}
+                {% import ':Macro:formButtons.html.twig' as formButtons %}
+                {{ formButtons.update() }}
+                {{ buttons.back({
+                    url : path('user_list'),
+                }) }}
+
+                {#{{ form_errors(form) }}#}
+                <div class="hide">
+                {{ form_rest(form) }}
+                </div>
+
+            </form>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        
+    </script>
+{% endblock %}

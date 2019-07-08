@@ -1,0 +1,5 @@
+button:
+  next: next
+  finish: finish
+  back: back
+  reset: 'start over'

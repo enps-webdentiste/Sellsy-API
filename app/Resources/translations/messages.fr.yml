@@ -1,0 +1,322 @@
+
+pomp.user.create_header: Création utilisateur
+pomp.users: Utilisateurs
+pomp.users.particulier: Particulier
+pomp.users.praticien: Praticien
+pomp.users.sub_header: Aperçu
+pomp.user.list_title: Liste des utilisateurs
+pomp.id: ID
+pomp.user.username: Nom d'utilisateur
+pomp.user.email: Email utilisateur
+pomp.user.last_login: Dernière connexion
+pomp.user.enabled: Actif
+pomp.list.actions: Actions
+pomp.user.no_results: Pas de résultats
+pomp.user.update_header: Modification utilisateur
+pomp.manage_vehicles: Créer un véhicule
+pomp.manage_orders: Créer une commande
+pomp.orders: Commandes
+pomp.displayb2bOrders: Commandes B2B
+pomp.welcome: Bienvenue sur Pomp
+pomp.last_login: Dernière connexion le
+pomp.account: Mon compte
+pomp.user.sepaenabled: Activer Sepa
+pomp.email: Email
+pomp.firstname: Nom
+pomp.lastname: Prénoms
+pomp.enabled: Actif
+pomp.yes: Oui
+pomp.no: Non
+
+pomp.error_title: ERREUR
+pomp.error_text1: Un problème est survenu.
+pomp.error_text2: Si vous pensez qu'il s'agit d'une erreur, n'hésitez pas à nous contacter !
+pomp.error400_title: ERREUR 400
+pomp.error400_text: Une erreur de requete est survenue lors de votre navigation.
+pomp.error401_title: ERREUR 401
+pomp.error401_text: Vous n'êtes pas connecté !
+pomp.error403_title: ERREUR 403
+pomp.error403_text: Vous n'avez pas accès à cette page.
+pomp.error404_title: ERREUR 404
+pomp.error404_text: Malheureusement, la page à laquelle vous tentez d'accéder n'est pas disponible.
+pomp.error500_title: ERREUR 500
+pomp.error500_text: Une erreur de serveur est survenue.
+
+
+sylius.resource.create: La création a bien été effectuée.
+sylius.resource.update: La mise à jour a bien été effectuée.
+sylius.resource.delete: La suppression a bien été effectuée.
+
+
+pomp.vehicle: Véhicule
+pomp.vehicles: Véhicules
+pomp.imat: Immatriculation
+pomp.brand: Marque
+pomp.model: Modèle
+pomp.location: Lieu
+pomp.fuelType: Type de carburant
+pomp.color: Couleur
+
+pomp.actions: Actions
+pomp.creation_date: Date de création
+pomp.update_date: Date de modification
+
+## Confirmation ##
+pomp.confirmation.title: Êtes-vous sûr(e) ?
+pomp.confirmation.message: Voulez-vous vraiment réaliser cette action ?
+
+## Buttons ##
+button.create: Créer
+buton.show: Afficher
+button.update: Modifier
+button.manage: Gérer
+button.delete: Supprimer
+button.confirm: Confirmer
+button.cancel: Annuler
+button.submit: Envoyer
+button.browse: Rechercher
+button.back: Retour
+button.generate: Générer
+button.import: Importer
+button.add: Ajouter
+button.save: Enregistrer
+button.cancel_update: Annuler la modification
+button.cancel_add: Annuler l'ajout
+button.finish: Finir
+button.next: Suivant
+button.delete: Supprimer
+button.see_more: Voir plus
+button.update_price: Modifier les prix
+button.clear_filter: Effacer les filtres
+button.profile: Profil
+button.sign_out: Déconnexion
+
+## API Clients ##
+pomp.clients: API Clients
+
+## Payment ##
+pomp.payment: Paiement
+pomp.payment.sub_header: Enregistrer le paiement
+pomp.payment.list_title: Débiter un client enregistré
+
+## API - documentation ##
+pomp.api.doc: API Privée
+pomp.api.doc.public: API Public
+pomp.documentation: Documentation
+pomp.documentation.sub_header: API Documentation
+pomp.documentation.list_title: Pomp API Documentation
+
+## Orders ##
+pomp.orders: Commandes
+pomp.orders.sub_header:	Liste des commandes
+pomp.orders.list_title:	Liste des commandes
+pomp.orderType:	Type de commande
+pomp.orders: Commandes
+
+## Locations ##
+pomp.location: Lieux
+
+## Schedules ##
+pomp.schedule: Réapprovisionnement
+
+## PompUsers ##
+pomp.pompUsers: Utilisateurs Pomp
+pomp.pompUsers.sub_header: Liste des utilisateurs Pomp
+pomp.pompUsers.list_title: Liste des utilisateurs Pomp
+
+## Companies ##
+pomp.companies: Entreprises
+pomp.company: Entreprise
+pomp.companies.sub_header: Liste des entreprises
+pomp.companies.list_title: Liste des entreprises
+
+## Prices / Scrapping ##
+pomp.price: Système de prix
+pomp.scrap: Prix de l'essence à Paris
+pomp.scrap.sub_header: Vue générale
+pomp.scrap.list_title: "Liste des prix:"
+
+## Traffic ##
+pomp.traffic: Informations sur le trafic
+pomp.traffic.sub_header: Implémentation GoogleMaps
+pomp.traffic.list_title: informations trafic
+
+
+######  EMAILS #####
+
+## base_email ##
+email.base.talk_about_us: Parlez de nous à vos amis !
+email.base.hi: Bonjour
+email.base.copyright: Tout droits réservés
+email.base.CGU: CGU
+email.pomp_team: L'équipe Pomp
+
+## confirm_signup ##
+email.confirm_signup.title: Merci de vous être inscrit !
+email.confirm_signup.success: Bienvenue dans notre communauté Pomp !
+email.confirm_signup.log_in: Connectez vous sur notre site
+email.confirm_signup.able_order: pour pouvoir passer votre première commande.
+email.confirm_signup.bye: A très bientôt !
+
+## password_resetting ##
+email.reset_password.title: Vous voulez réinitialiser votre mot de passe ?
+email.reset_password.here_it_is: Veuillez simplement suivre
+email.reset_password.link: ce lien.
+email.reset_password.bye: A très bientôt !
+
+## confirm_order ##
+email.confirm_order.title: "Voici le récapitulatif de votre commande :"
+email.confirm_order.id_order: "Le code de votre commande :"
+email.confirm_order.vehicle: "Votre véhicule :"
+email.confirm_order.amount: "Le montant d'essence que vous avez commandé :"
+email.confirm_order.fill_up: Vous avez commandé un plein d'essence.
+email.confirm_order.date: "La date de la commande :"
+email.confirm_order.place: "Le lieu de la commande :"
+email.confirm_order.type_fuel: "Le type d'essence que nous vous fourniront :"
+email.confirm_order.contact_text: Si vous constatez un problème dans votre commande, n'hésitez pas à nous contacter
+email.confirm_order.contact_text2: Ou par téléphone au 01 76 44 01 43.
+email.confirm_order.contact_link: via notre site internet
+email.confirm_order.bye: A très bientôt !
+
+## cancel_order ##
+email.cancel_order.title: "Voici le récapitulatif de votre commande annulée:"
+email.cancel_order.id_order: "Le code de votre commande :"
+email.cancel_order.vehicle: "Votre véhicule :"
+email.cancel_order.amount: "Le montant d'essence que vous avez commandé :"
+email.cancel_order.fill_up: Vous avez commandé un plein d'essence.
+email.cancel_order.date: "La date de la commande :"
+email.cancel_order.place: "Le lieu de la commande :"
+email.cancel_order.type_fuel: "Le type d'essence que nous vous fourniront :"
+email.cancel_order.contact_text: Si vous constatez un problème dans votre commande, n'hésitez pas à nous contacter
+email.cancel_order.contact_text2: Ou par téléphone.
+email.cancel_order.contact_link: via notre site internet
+email.cancel_order.bye: A très bientôt !
+email.cancel_order.cancel_paid: Cela vous a coûté 5€ !
+
+## user_task_failed ##
+email.user_task_failed.title: "Tâche annulée:"
+email.user_task_failed.id_order: "Le code de votre commande :"
+email.user_task_failed.not_show_up: "La livraison a échouée"
+email.user_task_failed.contact_text: Si vous constatez un problème dans votre commande, n'hésitez pas à nous contacter
+email.user_task_failed.contact_text2: Ou par téléphone.
+email.user_task_failed.contact_link: via notre site internet
+email.user_task_failed.bye: A très bientôt !
+email.user_task_failed.task_failed_paid: Cela vous a coûté 5€ !
+
+## pomp_task_failed ##
+email.pomp_task_failed.title: "Une tâche a échoué:"
+email.pomp_task_failed.id_order: "Le code de la commande :"
+email.pomp_task_failed.id_task: "Le code de la tâche :"
+email.pomp_task_failed.text: "Une tâche a échoué"
+email.pomp_task_failed.contact_text2: Ou par téléphone.
+email.pomp_task_failed.contact_link: via notre site internet
+email.pomp_task_failed.bye: A très bientôt !
+
+## no_place_number ##
+email.no_place_number.title: "Vous n'avez pas renseigné votre place de parking :"
+email.no_place_number.text1: Pour que nous puissions accéder à votre véhicule, nous avons besoin de savoir où il est ! Pourriez-vous renseigner son numéro de place de parking ?
+email.no_place_number.link: Suivez ce lien
+email.no_place_number.text2: ", connectez-vous et mettez à jour votre commande. Merci !"
+
+
+## B2B Order ##
+pomp.delivery_date: Date de livraison
+pomp.b2bOrders.list: Liste des commandes
+pomp.b2bOrders.order: Commande
+pomp.b2bOrders: Commandes
+pomp.b2bOrders.sub_header: Vos commandes
+pomp.b2bOrders.view_header: Détails de la commande
+pomp.b2bOrders.status: Status de la commande
+pomp.b2bOrders.total_price:  Prix total facturé TTC
+pomp.b2bOrders.refills: Pleins effectués
+pomp.b2bOrders.vehicle: Véhicules
+pomp.b2bOrders.additionnal_informations: Informations complémentaires
+pomp.b2bOrders.added_info: Infos supplémentaires
+pomp.b2bOrders.liters: Litres ravitaillés
+pomp.b2bOrders.id_onfleet:  ID Onfleet
+pomp.b2bOrders.create_header: Nouvelle commande
+pomp.b2bOrders.steps: Étapes
+pomp.b2bOrders.or_add_new_schedule: Ajouter un créneau de ravitaillement
+pomp.b2bOrders.Add:  Ajouter
+pomp.b2bOrders.choose_vehicle: Choisissez les véhicules à ravitationner
+pomp.b2bOrders.or_add_new_vehicle: Ajouter un nouveau véhicule
+pomp.b2bOrders.your_selected_vehicle: Voici les véhicules dont vous souhaitez faire le plein
+pomp.b2bOrders.your_schedule: Votre créneau de ravitationnement
+pomp.b2bOrders.your_selected_vehicles_recap: Véhicules sélectionnés
+pomp.b2bVehicles: Mes véhicules
+pomp.b2bVehicles.sub_header: Ajouter un véhicule
+pomp.vehicle.list_title: Liste de vos véhicules
+pomp.b2bVehicle.update_header: Mettre à jour mon véhicule
+pomp.b2bOrders.update_header: Mettre à jour ma commande
+pomp.b2bOrders.select_schedule: Crénau de ravitaillement
+pomp.b2bOrders.select_vehicle: Véhicules
+pomp.b2bOrders.add_contract_number_vehicle: Numéros de contrat
+pomp.b2bOrders.contract_number: Numéro de contrat
+pomp.b2bOrders.confirmation: Récapitulatif
+pomp.b2bOrders.button_next: Suivant
+pomp.b2bOrders.button_back: Retour
+pomp.b2bOrders.button_reset: Reset
+pomp.b2bVehicles.create_header: Créer un nouveau véhicule
+pomp.b2bOrders.Cancel_order: Annuler la commande
+pomp.b2bOrders.label_schedule_date: Date
+pomp.b2bOrders.label_schedule_location: Lieu
+pomp.b2bOrders.label_vehicle_company: Entreprise
+pomp.b2bOrders.label_vehicle_imat: Immatriculation
+pomp.b2bOrders.label_vehicle_brand: Marque
+pomp.b2bOrders.label_vehicle_model: Modèle
+pomp.b2bOrders.label_vehicle_fuelType: Type d'essence
+pomp.b2bOrders.label_vehicle_color: Couleur
+pomp.b2bOrders.label_schedule_choose: "Choisissez un réapprovisionnement:"
+pomp.b2bOrders.must_choice_vehicle: Vous devez sélectionner au moins un véhicule !
+pomp.b2bOrders.update_this_vehicle: Modifier ce véhicule
+email.b2border_allrefilled.title: Trouvez ci-joint la facture de votre commande.
+pomp.b2bOrders.download_invoice_pdf: Télécharger la facture
+
+
+pomp.welcome_to_dashboard: Bienvenue sur la Dashboard Upself !
+pomp.hello: Bonjour
+pomp.dashboard.welcome_text1: Découvrez notre Dashboard Upself. En cas de questions, n'hésitez pas à nous contacter par mail à
+pomp.mail_address: support@pompfuel.com
+pomp.dashboard.welcome_text2: ou par téléphone au
+pomp.phone_number: +33 1 76 44 01 43
+pomp.form.filter.query: Rechercher
+pomp.no_results: Aucun résultat trouvé.
+pomp.owner: Utilisateur
+
+pomp.b2bSepa.iban_text: En fournissant votre IBAN, vous autorisez POMP et Stripe, notre service de paiement, d'envoyer à votre banque des instructions de débit sur votre compte, enn accord avec ces instructions. Vous avez le droit de demander un remboursement sous les conditions générales de votre banque. Un remboursement peut-être réclamé dans les 8 semaines à partir de la date où le compte à été débité. Plus d'information sur les prélèvements SEPA <a href="https://www.europeanpaymentscouncil.eu/what-we-do/sepa-direct-debit/sdd-mandate" target="_blank">ici</a>.
+pomp.b2bSepa.alredy_actived: Votre SEPA est bien fonctionnel !
+
+datee.notation.update_header: Modification
+
+upself.school: Ecole
+upself.school.create_header: Créer une école
+upself.school.sub_header: Aperçu
+upself.school.update_header: Modifier une école
+upself.school.list_title: Liste des écoles
+upself.school.enabled: Activer
+upself.school.sepaenabled: Activer Sepa
+
+
+#page static
+upself.pages: Page
+upself.page.list_title: Liste des pages
+upself.page.create_header: Créer une page
+upself.page.update_header: Modifier une page
+
+upself.speciality: Specialité
+upself.speciality.create_header: Créer une spécialité
+upself.speciality.sub_header: Aperçu
+upself.speciality.update_header: Modifier une spécialité
+upself.speciality.list_title: Liste des spécialités
+upself.speciality.enabled: Activer
+upself.speciality.sepaenabled: Activer Sepa
+
+pomp.role: Rôle
+
+upself.recommendation: Recommandation praticien
+upself.recommendation.create_header: Ajouter une Recommandation
+upself.recommendation.sub_header: Aperçu
+upself.recommendation.update_header: Modifier une Recommandation
+upself.recommendation.list_title: Liste des recommandations praticiens
+upself.recommendation.enabled: Activer
+upself.recommendation.sepaenabled: Activer Sepa

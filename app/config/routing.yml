@@ -1,0 +1,30 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    
+fos_user_group:
+    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
+    prefix: /group
+    
+user_update:
+    path: /user/update/{id}
+    methods: [GET, POST]
+    defaults: {_controller:  AppBundle:User:update }
+    
+user_create:
+    path: /user/create
+    methods: [ GET, POST]
+    defaults: {_controller:  AppBundle:User:create }
+    
+user_delete:
+    path: /user/delete/{id}
+    methods: [ GET, POST]
+    defaults: {_controller:  AppBundle:User:delete }
+    
+user_update_parameter:
+    path: /user/updateparameter
+    methods: [GET, POST]
+    defaults: {_controller:  AppBundle:User:updateParameter }

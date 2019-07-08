@@ -1,0 +1,20 @@
+<div class="modal fade" id="confirmation-modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">{{ 'pomp.confirmation.title'|trans }}</h4>
+            </div>
+            <div class="modal-body">
+                {{ 'pomp.confirmation.message'|trans }}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">
+                    <i class="fa fa-times"></i> {{ 'button.cancel'|trans }}</button>
+                <button class="btn btn-primary" id="confirmation-modal-confirm">
+                    <i class="fa fa-check"></i><span>{{ message is defined ? message : 'button.confirm'|trans }}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

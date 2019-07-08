@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Bienvenue !{% endblock %}</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self' http://cdn.datatables.net/ ; style-src 'self' https://www.gstatic.com/ https://cdn.datatables.net/  'unsafe-inline' 'unsafe-eval';script-src 'self' https://www.gstatic.com/ https://cdn.datatables.net/ https://cdnjs.cloudflare.com/ 'unsafe-inline' 'unsafe-eval';">
+        {% block stylesheets %}
+		<!-- Font Awesome -->
+        <link rel="stylesheet" href="{{ asset('bundles/app/font-awesome/css/font-awesome.min.css') }}" />
+        <!-- Ionicons -->
+        <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.csss" /-->
+		<link rel="stylesheet" href="{{ asset('bundles/app/css/main.css') }}" />
+		{% stylesheets output='public/compiled/compiled.css' filter='cssrewrite'
+            '@AppBundle/Resources/public/adminLTE/dist/css/AdminLTE.css'
+            '@AppBundle/Resources/public/adminLTE/dist/css/skins/skin-blue.css'
+			'@AppBundle/Resources/public/bootstrap/css/bootstrap.min.css'
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+		
+        {% endstylesheets %}
+		
+		{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+	{% block body %}
+	{% set routeName = app.request.attributes.get('_route') %}
+    <body class="hold-transition skin-blue sidebar-mini">
+		<div class="wrapper">
+			<header class="main-header">
+			<!-- Logo -->
+			<a href="{{ path('homepage') }}" class="logo">
+			  <!-- mini logo for sidebar mini 50x50 pixels -->
+			  <span class="logo-mini"><img src="{{ asset('bundles/app/img/logo-petit.png') }}" alt="Logo" style="max-height:47px;max-width:47px;vertical-align: top;padding: 5px 3px 3px 3px;"></span>
+			  <!-- logo for regular state and mobile devices -->
+			  <span class="logo-lg"><img src="{{ asset('bundles/app/img/new-logo.png') }}" alt="Logo" style="max-height:50px;"></span>
+			</a>
+
+		<!-- Header Navbar: style can be found in header.less -->
+		<nav class="navbar navbar-static-top">
+		  <!-- Sidebar toggle button-->
+		  <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+			<span class="sr-only">Toggle navigation</span>
+		  </a>
+		  
+		  <!-- Navbar Right Menu -->
+		  <div class="navbar-custom-menu">
+			<ul class="nav navbar-nav">
+			  <!-- User Account: style can be found in dropdown.less -->
+			  <li class="dropdown user user-menu">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				  <img src="{{ asset('bundles/app/adminLTE/dist/img/noavatar.png') }}" class="user-image" alt="User Image">
+				  <span class="hidden-xs"> {{ app.user.username }}</span>
+				</a>
+				<ul class="dropdown-menu">
+				  <!-- User image -->
+				  <li class="user-header">
+					<img src="{{ asset('bundles/app/adminLTE/dist/img/noavatar.png') }}" class="img-circle" alt="User Image">
+
+					<p>
+					   {{ app.user.email }}
+					  <small>Dernière connexion {{ app.user.lastLogin|date }}</small>
+					</p>
+				  </li>
+				  
+				  <!-- Menu Footer-->
+				  <li class="user-footer">
+					<div class="pull-left">
+					  <a href="{{ path('fos_user_profile_show') }}" class="btn btn-default btn-flat">Profil</a>
+					</div>
+					<div class="pull-right">
+					  <a href="{{ path('fos_user_security_logout') }}" class="btn btn-default btn-flat">Déconnexion</a>
+					</div>
+				  </li>
+				</ul>
+			  </li>
+			  <!-- Control Sidebar Toggle Button -->
+			  <li>
+				<a href="{{ path('user_update_parameter') }}" ><i class="fa fa-gears"></i></a>
+			  </li>
+			</ul>
+		  </div>
+
+		</nav>
+	  </header>
+		{% block sidebar %}
+			{% include ':Menu:sidebar.html.twig' with {'routeName': routeName } %}
+		{% endblock %}
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			{% block flashMessages %}
+				{% include ':Menu:flashes.html.twig' %}
+			{% endblock %}
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+				{% block header %}
+					<!--h1>
+						Extend
+						<small>me</small>
+					</h1-->
+				{% endblock %}
+				
+			</section>
+			<section class="content">
+				{% block content %}
+					Extend me!
+				{% endblock %}
+				{% include ':Macro:confirmModal.html.twig' %}
+			</section>
+		</div>
+        {% block javascripts %}
+		{% javascripts output='public/compiled/compiled.js'
+		'bundles/app/plugins/jQuery/jquery-2.2.3.min.js'
+		'bundles/app/bootstrap/js/bootstrap.min.js'
+		'bundles/app/adminLTE/dist/js/adminlte.min.js'
+		'bundles/app/plugins/ionslider/ion.rangeSlider.min.js'
+		'bundles/app/plugins/daterangepicker/moment.min.js'
+		'bundles/app/plugins/daterangepicker/daterangepicker.js'
+		'bundles/app/plugins/iCheck/icheck.min.js'
+		'bundles/app/plugins/fullcalendar/fullcalendar.min.js'
+		'bundles/app/plugins/pace/pace.min.js'
+		'bundles/app/plugins/fastclick/fastclick.js'
+		'bundles/app/plugins/select2/select2.min.js'
+		'@AppBundle/Resources/public/js/main.js'
+		%}
+		<script type="text/javascript" src="{{ asset_url }}"></script>
+		
+		{% endjavascripts %}
+		{% endblock %}
+		</div>
+    </body>
+	{% endblock %}
+</html>

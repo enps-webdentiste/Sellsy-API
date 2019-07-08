@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% import ':Macro:alerts.html.twig'  as alerts      %}
+{% import ':Macro:buttons.html.twig' as buttons     %}
+{% import ':Macro:misc.html.twig'    as misc        %}
+
+{% block header %}
+    <h1>
+        Gestion des groupes
+    </h1>
+{% endblock %}
+{% block content %}
+{% include "@FOSUser/Group/show_content.html.twig" %}
+{% endblock content %}

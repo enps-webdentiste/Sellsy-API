@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<form action="{{ path('webhook-sellsy') }}" method="POST" >
+<input type="text" name="notif" />
+<input type="submit" value="send" />
+</form>
+{{ dump(agenda)}}
+{{ dump(availableLabel) }}
+{{ dump(client)}}
+{{ dump(contact)}}
+
+{{ dump(staff)}}
+
+{{ dump(event)}}
+    
+	
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+	
+    
+{% endblock %}

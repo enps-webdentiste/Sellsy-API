@@ -1,0 +1,82 @@
+{% macro submit(options = {}) %}
+    {% set defaultParams = {
+        'id'       : null,
+        'btnClass' : 'btn-default',
+        'name'     : 'button.submit',
+        'class'    : null,
+        'title'    : null,
+        'pull'     : 'left'
+    } %}
+
+    {% set params = defaultParams|merge(options) %}
+
+    <button type="submit" class="btn {{ params.class }} {{ params.btnClass }} pull-{{ params.pull }}"
+        {% if params.id is not null %} id="{{ params.id }}"{% endif %}
+    >
+        {{ params.name|trans }}
+    </button>
+{% endmacro %}
+
+{% macro create(options = {}) %}
+    {% set defaultParams = {
+        'btnClass' : 'btn-success',
+        'name'     : 'button.create',
+        'title'    : 'button.create',
+        'pull'     : 'right'
+    } %}
+    {% set params = defaultParams|merge(options) %}
+
+    {% import _self as formButtons %}
+    {{ formButtons.submit(params) }}
+{% endmacro %}
+
+{% macro update(options = {}) %}
+    {% set defaultParams = {
+        'btnClass' : 'btn-default',
+        'name'     : 'button.update',
+        'title'    : 'button.update',
+        'pull'     : 'right'
+    } %}
+    {% set params = defaultParams|merge(options) %}
+
+    {% import _self as formButtons %}
+    {{ formButtons.submit(params) }}
+{% endmacro %}
+
+{% macro manage(options = {}) %}
+    {% set defaultParams = {
+        'btnClass' : 'btn-default',
+        'name'     : 'button.manage',
+        'title'    : 'button.manage',
+        'pull'    : 'right'
+    } %}
+    {% set params = defaultParams|merge(options) %}
+
+    {% import _self as formButtons %}
+    {{ formButtons.submit(params) }}
+{% endmacro %}
+
+{% macro delete(options = {}) %}
+    {% set defaultParams = {
+        'btnClass' : 'btn-danger',
+        'name'     : 'button.delete',
+        'title'    : 'button.delete',
+        'pull'     : 'right'
+    } %}
+    {% set params = defaultParams|merge(options) %}
+
+    {% import _self as formButtons %}
+    {{ formButtons.submit(params) }}
+{% endmacro %}
+
+{% macro import(options = {}) %}
+    {% set defaultParams = {
+        'btnClass' : 'btn-default',
+        'name'     : 'button.import',
+        'title'    : 'button.import',
+    } %}
+    {% set params = defaultParams|merge(options) %}
+
+    {% import _self as formButtons %}
+    {{ formButtons.submit(params) }}
+{% endmacro %}

@@ -1,0 +1,10 @@
+{% block sidebarUserInfos %}
+    <div class="pull-left image">
+        <img src="{{ asset('bundles/app/img/logo-small.png') }}" height="50" width="50" class="img-circle" alt="User Image">
+    </div>
+    <div class="pull-left info">
+        <p>{{ app.user.username }}</p>
+        <!-- Status -->
+        <a href="#"><i class="fa fa-circle text-success"></i> {{ display_role(app.user) }}</a>
+    </div>
+{% endblock %}

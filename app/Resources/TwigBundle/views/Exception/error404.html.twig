@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Erreur de chargement de page{% endblock %}
+{% block content %}
+<div style="margin-top:10%; ">
+	<h1 class="text-center error-title" style="color:#FF6600;">{{ 'pomp.error404_title'|trans }}</h1>
+    <p class="text-center">{{ 'pomp.error404_text'|trans }}</p>
+    <p class="text-center">{{ 'pomp.error_text2'|trans }}   </p>
+</div>
+{% endblock %}

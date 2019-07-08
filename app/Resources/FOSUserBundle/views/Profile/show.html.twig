@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% import ':Macro:alerts.html.twig'  as alerts      %}
+{% import ':Macro:buttons.html.twig' as buttons     %}
+{% import ':Macro:misc.html.twig'    as misc        %}
+
+{% block header %}
+    <h1>
+        Profil
+    </h1>
+{% endblock %}
+
+{% block content %}
+{% include "@FOSUser/Profile/show_content.html.twig" %}
+{% endblock content %}

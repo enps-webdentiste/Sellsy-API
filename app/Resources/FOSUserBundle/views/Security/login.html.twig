@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% block stylesheets %}
+    {{ parent() }}
+	<style>
+	.jmain-footer {
+		background: #fff;
+		padding: 15px;
+		color: #444;
+		border-top: 1px solid #d2d6de;
+	}
+	</style>
+{% endblock %}
+{% block body %}
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo" >
+        <img src="{{ asset('bundles/app/img/logo_wd.png') }}" alt="Logo" style="max-width:360px;">
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">Connectez-vous pour commencer</p>
+        {% if error %}
+            <div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <i class="icon fa fa-warning"></i>
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}"
+                >
+            <div class="form-group has-feedback">
+                <input type="text" id="username" name="_username"
+                    value="{{ last_username }}" required="required"
+                    class="form-control"  placeholder="Email" >
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" id="password" name="_password" required="required"
+                       class="form-control" placeholder="Password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-7">
+                    <div class="">
+                        <label>
+                            <input id="remember_me" name="_remember_me" value="on" checked="checked" type="checkbox" class="icheck"> <span style="padding-left:10px;">
+                                {{ 'security.login.remember_me'|trans }}</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-xs-5">
+                    <button type="submit" id="_submit" name="_submit" class="btn btn-primary btn-block btn-flat">Connecter</button>
+                </div>
+                <!-- /.col -->
+            </div>
+            {#{{ form_end() }}#}
+        </form>
+
+        <a href="{{ path('fos_user_resetting_request') }}">J'ai oublié mon mot de passe</a><br>
+        {#<a href="{{ path('fos_user_registration_register') }}">Register</a><br>#}
+    </div>
+    <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+<!-- Main Footer -->
+<footer id="fixed-footer" class="jmain-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+        WebDentiste Dashboard
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; {{ "now"|date("Y") }} <a href="http://webdentiste.fr/" target="_blank">WebDentiste</a>.</strong> All rights reserved.
+</footer>
+
+
+</body>
+{% endblock %}
+

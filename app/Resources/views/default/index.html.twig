@@ -1,0 +1,376 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    <h1><form name="filtermonth" action="{{path('homepage')}}" id="filtermonth" >
+        Dashboard (sur <select name="mois" id="mois">
+			{% for i in 1..12 %}
+				<option value="{{i}}" {% if i == default_month %}selected="selected"{% endif %}> {{i}} </option>
+			{% endfor %}
+		</select> mois) 
+		
+		
+		</form>
+    </h1>
+{% endblock %}
+{% block content %}
+<div class="row">
+	<div class="col-md-6">
+		<div class="box box-default">
+			<div class="box-header with-border">
+			<h3 class="box-title">Clients sans contact téléphonique</h3>
+				<div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+				</div>
+			</div>
+		<!-- /.box-header -->
+			<div class="box-body" id="container1">
+				<div id="chart_div" class="chart"></div>
+			</div>
+		<!-- /.box-body -->
+		</div>
+	</div>
+	
+	<div class="col-md-6">
+		<div class="box box-default">
+			<div class="box-header with-border">
+			<h3 class="box-title">Suivi clients (inclus rendez-vous de suivi)</h3>
+				<div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+				</div>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body">
+				<div id="ind3" class="chart"></div>
+			</div>
+			<!-- /.box-body -->
+		</div>
+	</div>
+	
+	<div class="col-md-6">
+		<div class="box box-default">
+			<div class="box-header with-border">
+			<h3 class="box-title">Clients sans rendez-vous de suivi</h3>
+				<div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+				</div>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body">
+				<div id="ind22"  class="chart"></div>
+			</div>
+			<!-- /.box-body -->
+		</div>
+	</div>
+	
+	<div class="col-md-6">
+		<div class="box box-default">
+			<div class="box-header with-border">
+			<h3 class="box-title">Clients avec rendez-vous de suivi</h3>
+				<div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+				</div>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body">
+				<div id="ind21"  class="chart"></div>
+			</div>
+			<!-- /.box-body -->
+		</div>
+	</div>
+	
+	
+	<div class="col-md-6">
+		<div class="box box-default">
+			<div class="box-header with-border">
+			<h3 class="box-title">Clients relancés sans rendez-vous de suivi</h3>
+				<div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+				</div>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body">
+				<div id="ind4" class="chart"></div>
+			</div>
+			<!-- /.box-body -->
+	  </div>
+	</div>
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+	<style>
+	.chart {
+	  width: 100%;
+	}
+	
+	</style>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+	<script type="text/javascript" src="{{ asset('bundles/app/charts/loader.js') }}"></script>
+	<script type="text/javascript">
+	{% set values = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']%}
+	
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+	
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart(o) { 
+	  
+		var data = google.visualization.arrayToDataTable([
+        ["Element", "Nombre", { role: "style" } , "Id" ],
+		{% if sans_contact|length > 0 %}
+			{% for owner in sans_contact %}
+				['{{owner.name}}', {{owner.value}} , '#{{owner.color}}',{{owner.id}}],
+			{% endfor %}
+		{% else %}
+			['',0,'#FFFFFF',0]
+		{% endif %}
+        ]);
+
+        
+        var view = new google.visualization.DataView(data);
+		  view.setColumns([0, 1,
+						   { calc: "stringify",
+							 sourceColumn: 1,
+							 type: "string",
+							 role: "annotation" },
+						   2]);
+		  var options = {
+			title: "{{total_sans_contact}} client(s)",
+			width: $( '#container1' ).width(),
+			height: 300,
+			bar: {groupWidth: "70%"},
+			chartArea: {left: 30,right:10},
+			legend: { position: "none" },
+			vAxis: {minValue: 0},
+			hAxis: {textStyle: {fontSize: 9}, slantedTextAngle:20}
+		  };
+			var chart = new google.visualization.ColumnChart(document.getElementById("chart_div"));
+			function selectHandler() {
+			  var selectedItem = chart.getSelection()[0];
+			  if (selectedItem) {
+				var topping = data.getValue(selectedItem.row, 0);
+				var owner = data.getValue(selectedItem.row, 3);
+				window.location.href = "{{ path('sans-contact') }}?mois="+$('#mois').children("option:selected").val()+"&owner="+owner;
+			  }
+			}
+			google.visualization.events.addListener(chart, 'select', selectHandler); 
+			chart.draw(view, options);
+		  }
+	  
+	  
+	  google.charts.setOnLoadCallback(ind21);
+      function ind21() {
+        var data = google.visualization.arrayToDataTable([
+        ["Element", "Nombre", { role: "style" } , "Id" ],
+		{% if with_rdv|length > 0 %}
+			{% for owner in with_rdv %}
+				['{{owner.name}}', {{owner.value}} , '#{{owner.color}}',{{owner.id}}],
+			{% endfor %}
+		{% else %}
+			['',0,'#FFFFFF',0]
+		{% endif %}
+        ]);
+
+        
+        var view = new google.visualization.DataView(data);
+		  view.setColumns([0, 1,
+						   { calc: "stringify",
+							 sourceColumn: 1,
+							 type: "string",
+							 role: "annotation" },
+						   2]);
+
+		  var options = {
+			title: "{{total_with_rdv}} client(s)",
+			width: $( '#container1' ).width(),
+			height: 300,
+			bar: {groupWidth: "70%"},
+			chartArea: {left: 30,right:10},
+			legend: { position: "none" },
+			vAxis: {minValue: 0},
+			hAxis: {textStyle: {fontSize: 9}, slantedTextAngle:20}
+		  };
+		  var chart = new google.visualization.ColumnChart(document.getElementById("ind21"));
+		  function selectHandler() {
+			  var selectedItem = chart.getSelection()[0];
+			  if (selectedItem) {
+				var topping = data.getValue(selectedItem.row, 0);
+				var owner = data.getValue(selectedItem.row, 3);
+				window.location.href = "{{ path('avec-rdvs') }}?mois="+$('#mois').children("option:selected").val()+"&owner="+owner;
+			  }
+			}
+			google.visualization.events.addListener(chart, 'select', selectHandler); 
+		  chart.draw(view, options);
+      }
+	  
+	  google.charts.setOnLoadCallback(ind22);
+      function ind22() {
+        var data = google.visualization.arrayToDataTable([
+        ["Element", "Nombre", { role: "style" } , "Id" ],
+		{% if without_rdv|length > 0 %}
+			{% for owner in without_rdv %}
+				['{{owner.name}}', {{owner.value}} , '#{{owner.color}}',{{owner.id}}],
+			{% endfor %}
+		{% else %}
+			['',0,'#FFFFFF',0]
+		{% endif %}
+        ]);
+
+        
+        var view = new google.visualization.DataView(data);
+		  view.setColumns([0, 1,
+						   { calc: "stringify",
+							 sourceColumn: 1,
+							 type: "string",
+							 role: "annotation" },
+						   2]);
+
+		  var options = {
+			title: "{{total_without_rdv}} client(s)",
+			width: $( '#container1' ).width(),
+			height: 300,
+			bar: {groupWidth: "70%"},
+			chartArea: {left: 30,right:10},
+			legend: { position: "none" },
+			vAxis: {minValue: 0},
+			hAxis: {textStyle: {fontSize: 9}}
+		  };
+		  var chart = new google.visualization.ColumnChart(document.getElementById("ind22"));
+		  function selectHandler() {
+			  var selectedItem = chart.getSelection()[0];
+			  if (selectedItem) {
+				var topping = data.getValue(selectedItem.row, 0);
+				var owner = data.getValue(selectedItem.row, 3);
+				window.location.href = "{{ path('sans-rdvs') }}?mois="+$('#mois').children("option:selected").val()+"&owner="+owner;
+			  }
+			}
+			google.visualization.events.addListener(chart, 'select', selectHandler); 
+		  chart.draw(view, options);
+      }
+	  
+	  google.charts.setOnLoadCallback(ind3);
+      function ind3() {
+        var data = google.visualization.arrayToDataTable([
+        ["Element", "Nombre", { role: "style" } , "Id" ],
+		{% if suivi|length > 0 %}
+			{% for owner in suivi %}
+				['{{owner.name}}', {{owner.value}} , '#{{owner.color}}',{{owner.id}}],
+			{% endfor %}
+		{% else %}
+			['',0,'#FFFFFF',0]
+		{% endif %}
+        ]);
+
+        
+        var view = new google.visualization.DataView(data);
+		  view.setColumns([0, 1,
+						   { calc: "stringify",
+							 sourceColumn: 1,
+							 type: "string",
+							 role: "annotation" },
+						   2]);
+
+		  var options = {
+			title: "{{total_suivi}} client(s)",
+			width: $( '#container1' ).width(),
+			height: 300,
+			bar: {groupWidth: "70%"},
+			chartArea: {left: 30,right:10},
+			legend: { position: "none" },
+			vAxis: {minValue: 0},
+			hAxis: {textStyle: {fontSize: 9}}
+		  };
+		  var chart = new google.visualization.ColumnChart(document.getElementById("ind3"));
+		  function selectHandler() {
+			  var selectedItem = chart.getSelection()[0];
+			  if (selectedItem) {
+				var topping = data.getValue(selectedItem.row, 0);
+				var owner = data.getValue(selectedItem.row, 3);
+				window.location.href = "{{ path('suivie-clts') }}?mois="+$('#mois').children("option:selected").val()+"&owner="+owner;
+			  }
+			}
+			google.visualization.events.addListener(chart, 'select', selectHandler); 
+		  chart.draw(view, options);
+      }
+	  
+		
+		google.charts.setOnLoadCallback(ind4);
+		
+      function ind4() {
+        var data = google.visualization.arrayToDataTable([
+        ["Element", "Nombre", { role: "style" } , "Id" ],
+		{% if relance|length > 0 %}
+			{% for owner in relance %}
+				['{{owner.name}}', {{owner.value}} , '#{{owner.color}}',{{owner.id}}],
+			{% endfor %}
+		{% else %}
+			['',0,'#FFFFFF',0]
+		{% endif %}
+        
+        ]);
+
+        
+        var view = new google.visualization.DataView(data);
+		  view.setColumns([0, 1,
+						   { calc: "stringify",
+							 sourceColumn: 1,
+							 type: "string",
+							 role: "annotation" },
+						   2]);
+
+		  var options = {
+			title: "{{total_relance}} client(s)",
+			width: $( '#container1' ).width(),
+			height: 300,
+			bar: {groupWidth: "70%"},
+			chartArea: {left: 30,right:10},
+			legend: { position: "none" },
+			vAxis: {minValue: 0},
+			hAxis: {textStyle: {fontSize: 9}, slantedTextAngle:20}
+		  };
+		  var chart = new google.visualization.ColumnChart(document.getElementById("ind4"));
+		  function selectHandler() {
+			  var selectedItem = chart.getSelection()[0];
+			  if (selectedItem) {
+				var topping = data.getValue(selectedItem.row, 0);
+				var owner = data.getValue(selectedItem.row, 3);
+				window.location.href = "{{ path('relance') }}?mois="+$('#mois').children("option:selected").val()+"&owner="+owner;
+			  }
+			}
+			google.visualization.events.addListener(chart, 'select', selectHandler); 
+		  chart.draw(view, options);
+      }
+	  $( ".sidebar-toggle" ).on( "click", function() {
+		  setTimeout(jreloadChart, 500);
+		});
+	function jreloadChart()
+	{
+		drawChart();
+		ind21();
+		ind22();
+		ind3();
+		ind4();
+	}
+	$(document).ready(function() {
+		$( "#mois" ).change(function() {
+		  $('form#filtermonth').submit();
+		});
+	});
+	
+    </script>
+    
+{% endblock %}
