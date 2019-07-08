@@ -39,10 +39,10 @@ C'est une application web, connectant à la base de donnée dans Sellsy à l'aid
 7.Configurer le paramètre d'accès à la base de donnée et les clé d'API dans app/config/parameters.yml
 
 8.Lancez les commandes suivants pour compilé les Javascript et CSS : 
-	php bin/console assets:install
-	php bin/console assetic:dump
-	php bin/console ca:cle 
-	php bin/console ca:cle --env=prod
+> php bin/console assets:install
+> php bin/console assetic:dump
+> php bin/console ca:cle 
+> php bin/console ca:cle --env=prod
 	
 9.Extraire le fichier teknoo.zip et copier le repertoire obtenu "teknoo" dans le repertoire "vendor" , en ecrasant l'ancien repertoire qui existe.
 
@@ -50,22 +50,22 @@ C'est une application web, connectant à la base de donnée dans Sellsy à l'aid
 
 > $: crontab -e
 
-*/5  * * * * php /var/www/html/wd-sellsy/bin/console import:ref:data
-*/10 * * * * php /var/www/html/wd-sellsy/bin/console import:cliagenda:data
-*/20 * * * * php /var/www/html/wd-sellsy/bin/console import:cliphone:data
-0 23 * * * php /var/www/html/wd-sellsy/bin/console ca:cle --env=prod
+> */5  * * * * php /var/www/html/wd-sellsy/bin/console import:ref:data
+> */10 * * * * php /var/www/html/wd-sellsy/bin/console import:cliagenda:data
+> */20 * * * * php /var/www/html/wd-sellsy/bin/console import:cliphone:data
+> 0 23 * * * php /var/www/html/wd-sellsy/bin/console ca:cle --env=prod
 
 Quelquefois le serveur necessite les commandes suivants pour que l'application puisse ecrire sur son répertoire de cache et de log
 
-$ HTTPDUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
-$ sudo setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var/cache var/logs
-$ sudo setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var/cache var/logs
+> $ HTTPDUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
+> $ sudo setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var/cache var/logs
+> $ sudo setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var/cache var/logs
 
 11.Configurer la nouvelle URL dans le panneau de configuration Sellsy:
-	Rentrez dans "Menu" => "Réglages" => "Développeur"
-	Dans la partie Webhook POST : Activer puis configurer 
-	Changer le "Endpoint personnalisé" par votre l'Url de votre nouvelle serveur ( Exemple https://www.wd-dashboard.com/sellsy)
-	Toujours dans cette partie : configurer le "Configurer les notifications envoyées au webhook" comme ce qu'on a avec le compte Sellsy de Mme Mélanie (mdouadi@wylog.com/704a8d622977)
+> Rentrez dans "Menu" => "Réglages" => "Développeur"
+> Dans la partie Webhook POST : Activer puis configurer 
+> Changer le "Endpoint personnalisé" par votre l'Url de votre nouvelle serveur ( Exemple https://www.wd-dashboard.com/sellsy)
+> Toujours dans cette partie : configurer le "Configurer les notifications envoyées au webhook" comme ce qu'on a avec le compte Sellsy de Mme Mélanie (mdouadi@wylog.com/704a8d622977)
 	
 
   
